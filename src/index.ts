@@ -2,6 +2,7 @@ import express, { Express, Request, Response } from 'express';
 import {json,urlencoded} from 'body-parser';
 import helmet from 'helmet';
 import dotenv from 'dotenv';
+import appRouter from './appRouter';
 
 dotenv.config();
 
@@ -12,8 +13,6 @@ app.use(helmet());
 app.use(json());
 app.use(urlencoded({ extended: true }));
 
-app.get('/players', (req: Request, res: Response) => {
-
-});
+app.use(appRouter);
 
 app.listen(PORT, () => console.log(`Running on ${PORT} ⚡`));
