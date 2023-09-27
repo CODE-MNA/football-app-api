@@ -1,3 +1,7 @@
 export enum Position{
-    GoalKeeper, Defender, MidFielder,Striker
+    Goalkeeper = "Goalkeeper"
+    , Defender = "Defender"
+    , MidFielder = "Mid-Fielder"
+    ,Striker = "Striker"
+    
 }
