@@ -3,9 +3,9 @@ const Player = require('../src/models/Player').Player
 describe('Player',()=>{
     it('should have a display name',()=>{
 
-        const player = new Player();
-
-       const expectedName = '';
+        const player = new Player("Player","Striker");
+        
+       const expectedName = "Player";
        expect(player.displayName).toBe(expectedName);
     })
 })

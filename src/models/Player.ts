@@ -6,12 +6,13 @@ export class Player{
     playerId : PlayerID = 0;
     displayName: string = "";
     position: Position = Position.Goalkeeper;
-    
-    constructor(displayName : string, positionString : string, image: string){
+    imagePath: string = "";
+
+    constructor(displayName : string, positionString : string, image: any){
         this.position = Position[positionString as keyof typeof Position];
         this.displayName = displayName;
-        
-        console.log(positionString)
+        this.imagePath = image
+
     }
 
 
