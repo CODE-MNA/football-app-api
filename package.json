@@ -1,7 +1,7 @@
 {
-  "name": "node-express-typescript",
-  "version": "1.0.0",
-  "description": "Node.js setup with Express and TypeScript",
+  "name": "football-app-api",
+  "version": "0.0.1",
+  "description": "JSON API that allows you to manage football players",
   "main": "dist/index.js",
   "scripts": {
     "build": "rimraf dist && tsc",
