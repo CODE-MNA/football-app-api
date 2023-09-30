@@ -22,7 +22,9 @@ A simple extensible JSON API developed using TypeScript, NodeJS (Express). Utili
 ## Env Variables
 
 ```PORT -> Controls the port on which the server listens```
+
 ```NODE_ENV -> development | production```
+
 ```DELETE_UPLOADS -> set true if you want to delete uploaded files from localsystem when app closes```
 
 ## Schema for API 
@@ -34,7 +36,7 @@ A simple extensible JSON API developed using TypeScript, NodeJS (Express). Utili
 Request Body:
 
 - displayName (string): `The display name of the player.`
-- position (string): `The position of the player. Allowed values are "Goalkeeper," "Defender," "Mid-Fielder," or "Striker."`
+- position (string): `The position of the player. Allowed values are "Goalkeeper", "Defender", "Mid-Fielder | MidFielder" or "Striker".`
 - profileImg (Image File Binary): `The profile image of the player.`
 
 Example Request Body:
@@ -42,7 +44,7 @@ Example Request Body:
 ```json
 {
     "displayName": "John Doe",
-    "position": "Striker",
+    "position": "Mid-Fielder",
 
     "profileImg": 'BINARY'
 }
@@ -103,7 +105,7 @@ try running these commands to deploy and run.
     - ```"docker build . -t football-backend:0.0.1 "```
     - ```"docker run -h football-backend --name football-backend -p 3004:3004 -v usr/src/app/uploaded -e NODE_ENV='development' football-backend:0.0.1"```
 
-- Alternatively if you have npm and node, run npm start for the server to start (keep in mind some server shutdown functionality like photos deletion won't work as the node process won't receive the program exit signal!)
+- Alternatively if you have npm and node, run npm start for the server to start (keep in mind some server shutdown functionality like photos deletion won't work as the node process won't receive the program exit signal when using an npm script!)
 
 ---
 
