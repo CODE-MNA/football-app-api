@@ -1,6 +1,5 @@
 # Mini-Football App API
 
-React Front-end : https://github.com/footballApp-frontend
 
 ## Overview
 A simple extensible JSON API developed using TypeScript, NodeJS (Express). Utilized multiple libraries to implement features such as image uploading. Dockerized application for easy deployment. 
