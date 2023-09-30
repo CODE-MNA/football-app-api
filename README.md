@@ -5,11 +5,7 @@ React Front-end : https://github.com/footballApp-frontend
 ## Overview
 A simple extensible JSON API developed using TypeScript, NodeJS (Express). Utilized multiple libraries to implement features such as image uploading. Dockerized application for easy deployment. 
 
----
 
-<b>WIP : This application can evolve as an app that manages players and teams for a football game / football app. At the moment there is no database and the information that is registered is stored in memory.
-
----
 ### 🔥 Features 
  - Register a new player by specifying role, image and name.
  - Return a list of players.
@@ -22,17 +18,13 @@ A simple extensible JSON API developed using TypeScript, NodeJS (Express). Utili
 - Alter formation for a team and assign players in slots based on their role.
 - Return information about the formation of the team
 
-### 🛒 Improvements after application becomes more complex
-- Using dedicated controller classes for endpoints and passing in interfaces in their constructors that they can call internally.
-- Writing tests for the services, endpoints and utility functions.
-- Changing image upload storage location from filesystem to an external blob storage resulting in more scalability as the webserver will be stateless and multiple instances can use access the external blob storage. 
 
 
 ## Env Variables
 
-To deploy this application, set:
 ```PORT -> Controls the port on which the server listens```
 ```NODE_ENV -> development | production```
+```DELETE_UPLOADS -> set true if you want to delete uploaded files from localsystem when app closes```
 
 ## Schema for API 
 
@@ -103,3 +95,24 @@ RESPONSE:
 }
 ]
 ``````
+---
+
+### Docker Deployment
+
+- If you have docker installed on your machine,
+try running these commands to deploy and run.
+    - ```"docker build . -t football-backend:0.0.1 "```
+    - ```"docker run -h football-backend --name football-backend -p 3004:3004 -v usr/src/app/uploaded -e NODE_ENV='development' football-backend:0.0.1"```
+
+- Alternatively if you have npm and node, run npm start for the server to start (keep in mind some server shutdown functionality like photos deletion won't work as the node process won't receive the program exit signal!)
+
+---
+
+### 🛒 Improvements after application becomes more complex
+- Using dedicated controller classes for endpoints and passing in interfaces in their constructors that they can call internally.
+- Writing tests for the services, endpoints and utility functions.
+- Changing image upload storage location from filesystem to an external blob storage resulting in more scalability as the webserver will be stateless and multiple instances can use access the external blob storage. 
+
+<b>WIP : This application can evolve as an app that manages players and teams for a football game / football app. At the moment there is no database and the information that is registered is stored in memory.
+
+---
